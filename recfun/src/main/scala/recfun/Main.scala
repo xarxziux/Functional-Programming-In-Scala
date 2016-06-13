@@ -8,6 +8,7 @@ object Main {
         print(pascal(col, row) + " ")
       println()
     }
+    
   }
 
   /**
@@ -24,4 +25,14 @@ object Main {
    * Exercise 3
    */
     def countChange(money: Int, coins: List[Int]): Int = ???
+    
+    def expandList (inc: Int, numList: List[Int]): List [Int] =
+      if (numList.tail.isEmpty)
+        List (inc + numList.head)
+      else
+        inc + numList.head :: expandList (inc + numList.head, numList.tail)
+    
+  
+  
+  
   }
