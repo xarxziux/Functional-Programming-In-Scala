@@ -109,8 +109,25 @@ object Main {
    */
     def countChange(money: Int, coins: List[Int]): Int = ???
     
-    
-  
+      val total = 100
+      /*def findAnswer (sCount: Int, subTotal: Int, cList: List[Int]): Int = {
+        if (cList.isEmpty)
+          count
+        else if (subTotal == 0)
+          count + 1
+        else if (cList.head > subTotal)
+          findAnswer (sCount, subTotal, cList.tail)
+        
+      }*/
+      
+      def checkAnswer (rCount: Int, tList: List[Int]): Int = {
+        if (tList.sum > total)
+          rCount
+        else if (tList.sum == total)
+          rCount + 1
+        else
+          checkAnswer (rCount, (tList.head :: tList))
+      }
   
   
   }
