@@ -48,50 +48,60 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = {
-    
-    def findClosing (depth: Int, cList: List[Char]): Int = 
+  def balance (chars: List[Char]): Boolean = {
+
+    def findClosing (cDepth: Int, cList: List[Char]): Int = {
       if (cList.isEmpty) 
-        0
+        -1
       else if (cList.head == ')')
-        depth
+        cDepth
       else if (cList.head == '(') {
         val cIndex = findClosing (1, cList.tail)
-        if (cIndex == 0)
-          0
+        if (cIndex == -1)
+          -1
         else
-          findClosing (depth+cIndex+1, cList.tail.drop (cIndex))
+          findClosing (cDepth+cIndex+1, cList.tail.drop (cIndex))
         }
           
       else
-        findClosing (depth + 1, cList.tail)
+        findClosing (cDepth + 1, cList.tail)
+    }
     
-    def findOpening (depth: Int, oList: List[Char]): Int =
+    def findOpening (oDepth: Int, oList: List[Char]): Int = {
       if (oList.isEmpty)
         0
-      if (oList.head == '(')
-        depth
+      else if (oList.head == '(')
+        oDepth
       else if (oList.head == ')')
         -1
       else
-        findOpening (depth+1, oList.tail)
+        findOpening (oDepth+1, oList.tail)
+    }
         
-    def dropBlock ()
+    def findBalance (bDepth: Int, bList: List[Char]): Int = {
+      if (bList.isEmpty)
+        0
+      else if (bList.head == ')')
+        -1
+      else if (bList.head == '(')
+        findClosing (bDepth+1, bList.tail)
+      else
+        findBalance (bDepth+1, bList.tail)
+    }
     
-    val oIndex = findOpening (1, chars)
-    
-    if (oIndex == -1)
-      false
-    else if (oIndex == 0)
+    if (chars.isEmpty)
       true
     else {
-      bIndex = findClosing ()
+  
+      val dropVal = findBalance (1, chars)
+      
+      if (dropVal == -1)
+        false
+      else
+        balance (chars.drop(dropVal))
     }
-  
-  
   }
   
-      
   
   
   /**
