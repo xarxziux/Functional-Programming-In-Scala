@@ -1,5 +1,10 @@
 # Function Programming in Scala Change Log
 
+## 2016-06-14
+
+### Added
+- recfun/Main.scala: findOpening and findClosing sub-routines added to balance() function.
+
 ## 2016-06-13
 
 ### Changed

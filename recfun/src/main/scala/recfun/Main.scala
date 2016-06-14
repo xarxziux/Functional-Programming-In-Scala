@@ -48,7 +48,51 @@ object Main {
   /**
    * Exercise 2
    */
-    def balance(chars: List[Char]): Boolean = ???
+  def balance(chars: List[Char]): Boolean = {
+    
+    def findClosing (depth: Int, cList: List[Char]): Int = 
+      if (cList.isEmpty) 
+        0
+      else if (cList.head == ')')
+        depth
+      else if (cList.head == '(') {
+        val cIndex = findClosing (1, cList.tail)
+        if (cIndex == 0)
+          0
+        else
+          findClosing (depth+cIndex+1, cList.tail.drop (cIndex))
+        }
+          
+      else
+        findClosing (depth + 1, cList.tail)
+    
+    def findOpening (depth: Int, oList: List[Char]): Int =
+      if (oList.isEmpty)
+        0
+      if (oList.head == '(')
+        depth
+      else if (oList.head == ')')
+        -1
+      else
+        findOpening (depth+1, oList.tail)
+        
+    def dropBlock ()
+    
+    val oIndex = findOpening (1, chars)
+    
+    if (oIndex == -1)
+      false
+    else if (oIndex == 0)
+      true
+    else {
+      bIndex = findClosing ()
+    }
+  
+  
+  }
+  
+      
+  
   
   /**
    * Exercise 3

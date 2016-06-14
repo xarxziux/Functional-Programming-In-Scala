@@ -78,3 +78,13 @@ local.properties
 .recommenders/
 
 
+
+
+
+
+# Others
+*/.cache-main
+*/.cache-tests
+
+
+
