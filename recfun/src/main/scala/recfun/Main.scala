@@ -10,7 +10,7 @@ object Main {
     }
     
   }
-
+  
   /**
    * Exercise 1
    */
@@ -21,7 +21,7 @@ object Main {
         List (inc + numList.head)
       else
         inc + numList.head :: expandList (inc + numList.head, numList.tail)
-
+    
     def buildBaseList (elemCount: Int): List [Int] = 
       if (elemCount == 0)
         List (1)
@@ -43,7 +43,7 @@ object Main {
       fullList (c)
     }
   }
-
+  
   
   /**
    * Exercise 2
@@ -102,32 +102,19 @@ object Main {
     }
   }
   
-  
-  
   /**
    * Exercise 3
    */
-    def countChange(money: Int, coins: List[Int]): Int = ???
-    
-      val total = 100
-      /*def findAnswer (sCount: Int, subTotal: Int, cList: List[Int]): Int = {
-        if (cList.isEmpty)
-          count
-        else if (subTotal == 0)
-          count + 1
-        else if (cList.head > subTotal)
-          findAnswer (sCount, subTotal, cList.tail)
-        
-      }*/
-      
-      def checkAnswer (rCount: Int, tList: List[Int]): Int = {
-        if (tList.sum > total)
-          rCount
-        else if (tList.sum == total)
-          rCount + 1
-        else
-          checkAnswer (rCount, (tList.head :: tList))
-      }
-  
-  
+  def countChange(money: Int, coins: List[Int]): Int = {
+    if(money == 0)
+      1
+    else if(money > 0 && !coins.isEmpty)
+      countChange(money, coins.tail) + countChange(money - coins.head, coins)
+    else
+      0
   }
+  
+}
+
+
+
