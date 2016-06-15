@@ -46,4 +46,16 @@ class BalanceSuite extends FunSuite {
     assert(!balance("999((9)00)0)((((9(99)0)0))000()0()(00()0))9(9(99))".toList))
   }
 
+  test("balance: custom6") {
+    assert(balance("999".toList))
+  }
+
+  test("balance: custom7") {
+    assert(balance("()".toList))
+  }
+
+  test("balance: custom8") {
+    assert(balance("".toList))
+  }
+
 }
