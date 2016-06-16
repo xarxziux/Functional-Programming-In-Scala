@@ -1,15 +1,5 @@
-  def countChange(money: Int, coins: List[Int]): Int = {
-    if(money == 0)
-      1
-    else if(money > 0 && !coins.isEmpty)
-      countChange(money, coins.tail) + countChange(money - coins.head, coins)
-    else
-      0
-  }
-  
-}
-
-  /**
+x
+/**
    * Exercise 3 in JavaScript
    */
 
@@ -17,7 +7,7 @@ var WshShell = new ActiveXObject ('WScript.Shell');
 
 function countChange (money, coins) {
   
-  if (money == 0) {
+  if (money === 0) {
     return 1;
   } else if ((money > 0) && (coins.length > 0)) {
     return countChange (money - coins[0], coins) 
