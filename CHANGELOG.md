@@ -1,5 +1,10 @@
 # Function Programming in Scala Change Log
 
+## 2016-06-15
+
+### Added
+- Week 2 assignment files added.
+
 ## 2016-06-14
 
 ### Added
