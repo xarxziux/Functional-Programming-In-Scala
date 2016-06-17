@@ -63,12 +63,11 @@ object Main {
       else
         iBalance (level, iList.tail)
     }
-      if (iBalance (0, chars) == 0)
-        true
-      else
-        false
-      
-      
+    
+    if (iBalance (0, chars) == 0)
+      true
+    else
+      false
     
   }
   
