@@ -23,3 +23,40 @@ findClosing <- function (cDepth, cList) {
     findClosing (cDepth + 1, cList [-1])
   }
 }
+
+balance <- function (iString) {
+  
+  iList <- unlist (strsplit (iString, split = ""))
+  
+  iBalance <- function (level, iList) {
+    
+    if (level < 0) {
+      # print ("Condition 1")
+      -1
+    } else if (length (iList) == 0) {
+      # print ("Condition 2")
+      level
+    } else if (iList [1] == ")") {
+      # print ("Condition 3")
+      iBalance (level - 1, iList[-1])
+    } else if (iList [1] == "(") {
+      # print ("Condition 4")
+      iBalance (level + 1, iList[-1])
+    } else {
+      # print ("Condition 5")
+      iBalance (level, iList[-1])
+    }
+  }
+
+  result <- if (iBalance (0, iList) == 0) {
+    TRUE
+  } else {
+    FALSE
+  }
+  
+  result
+  
+}
+
+
+

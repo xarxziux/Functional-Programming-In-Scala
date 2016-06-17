@@ -1,5 +1,13 @@
 # Function Programming in Scala Change Log
 
+## 2016-06-16
+
+### Changed
+- recfun/Main: re-wrote balance() function to mirror shorter R algorithm.
+
+### Added
+- other/ directory for JavaScript and R implementations of balance and count parentheses functions.
+
 ## 2016-06-15
 
 ### Added
