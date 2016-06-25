@@ -1,5 +1,10 @@
 # Function Programming in Scala Change Log
 
+## 2016-06-20
+
+### Added
+- factorial.js: experiments with recursion and trampolining in JavaScript.
+
 ## 2016-06-19
 
 ### Deleted
