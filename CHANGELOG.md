@@ -1,5 +1,10 @@
 # Function Programming in Scala Change Log
 
+## 2016-06-30
+
+### Added
+- IntSets.scala: added demo exercise from video 3.1.
+
 ## 2016-06-20
 
 ### Added
