@@ -1,5 +1,6 @@
 # Function Programming in Scala Change Log
 
+
 ## 2016-07-05
 
 ### Added
