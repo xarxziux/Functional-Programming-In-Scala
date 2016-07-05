@@ -1,5 +1,10 @@
 # Function Programming in Scala Change Log
 
+## 2016-07-05
+
+### Added
+- Uploaded completed freeCodeCamp challenges.
+
 ## 2016-06-30
 
 ### Added
